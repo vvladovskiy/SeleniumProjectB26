@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class P01_BasicNavigation {
     public static void main(String[] args) {
 
+//set up chrome and create WebDriver instance
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
