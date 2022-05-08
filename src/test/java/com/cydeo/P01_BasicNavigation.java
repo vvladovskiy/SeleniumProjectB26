@@ -20,11 +20,17 @@ public class P01_BasicNavigation {
         // navigate.back()
         driver.navigate().back();
 
+        Thread.sleep(5000);
+
         // navigate.forward()
         driver.navigate().forward();
+
+        Thread.sleep(5000);
 
         // navigate.refresh()
         driver.navigate().refresh();
 
+        driver.close();
+        driver.quit();
     }
 }
