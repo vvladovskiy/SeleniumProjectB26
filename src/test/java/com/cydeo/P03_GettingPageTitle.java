@@ -10,13 +10,17 @@ public class P03_GettingPageTitle {
         //set up chrome and create WebDriver instance
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
 
         // navigate to Google and print out the title
         driver.get("http://cydeo.com");
 
-        String title = driver.getTitle();
-        System.out.println("Title of the page: " + title);
-        if (title.equals("Cydeo")) {
+        String actualTitle = driver.getTitle(); // actual title
+        String expectedTitle = "Cydeo";         // expected title
+        System.out.println("Title of the page: " + actualTitle);
+
+
+        if (actualTitle.equals(expectedTitle)) {
             System.out.println("Test passed!");
         } else {
             System.out.println("Test failed :(");
