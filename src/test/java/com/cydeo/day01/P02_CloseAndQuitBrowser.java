@@ -1,26 +1,30 @@
-package com.cydeo;
+package com.cydeo.day01;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class P04_FullScreenMode {
+public class P02_CloseAndQuitBrowser {
     public static void main(String[] args) throws InterruptedException {
 
         //set up chrome and create WebDriver instance
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
 
-        // navigate to Google and print out the title
-        driver.get("http://cydeo.com");
+        // navigate to a practice page that open new tab
+        // this practice url will open and wait 3 seconds and open new tab
+        driver.get("http://practice.cydeo.com/open_new_tab");
 
-        driver.manage().window().maximize();
+        // wait 5 sec
+        Thread.sleep(5000);
 
-//        driver.manage().window().fullscreen();
+        // closing any current tab
+        driver.close();
 
         Thread.sleep(5000);
 
-        driver.close();
+        // close all browser windows opened by driver
         driver.quit();
+
     }
 }

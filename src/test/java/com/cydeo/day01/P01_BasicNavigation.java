@@ -1,4 +1,4 @@
-package com.cydeo;
+package com.cydeo.day01;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -43,3 +43,23 @@ public class P01_BasicNavigation {
         driver.quit();
     }
 }
+/*
+        WebDriverManager.chromedriver().setup();
+        WebDriver driver = new ChromeDriver();
+
+        driver.get();
+
+        driver.navigate().to();
+        driver.navigate().back();
+        driver.navigate().forward();
+        driver.navigate().refresh();
+
+        driver.getTitle();
+        driver.getCurrentUrl());
+
+        Thread.sleep(3000);
+
+        driver.close();
+        driver.quit();
+
+ */

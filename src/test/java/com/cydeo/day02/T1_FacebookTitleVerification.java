@@ -4,11 +4,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Task01_FacebookTitleVerification {
-    public static void main(String[] args) {
+public class T1_FacebookTitleVerification {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println(checkTitle("Check if Expected Title equal Actual!"));
     }
-    public static String checkTitle(String str){
+    public static String checkTitle(String str) throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
@@ -19,6 +19,8 @@ public class Task01_FacebookTitleVerification {
 
         String expectedTitle = "Facebook - log in or sign up";
         String actual = driver.getTitle();
+
+        Thread.sleep(2000);
 
         driver.close();
         driver.quit();
