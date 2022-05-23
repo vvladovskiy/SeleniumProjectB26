@@ -29,6 +29,9 @@ public class TestCase03Negative {
 
         // Verify the message "Incorrect login or password"
         WebElement alert = driver.findElement(By.className("errortext"));
+
+        // getText() method; it will get the content(text) form in between the opening and closing tag
+
         if(alert.getText().equals("Incorrect login or password")){
             System.out.println("Message appear");
         }else{
@@ -37,6 +40,5 @@ public class TestCase03Negative {
 
         Thread.sleep(3000);
         driver.close();
-        driver.quit();
     }
 }

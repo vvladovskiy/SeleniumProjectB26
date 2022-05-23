@@ -17,8 +17,10 @@ public class T2_WoodenSpoonEtsy {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+
         Dimension dimension = new Dimension(1200,1216);
         driver.manage().window().setSize(dimension);
+
         driver.navigate().to("https://www.etsy.com");
 
         WebElement searchBox = driver.findElement(By.xpath("//input[@name='search_query']"));
