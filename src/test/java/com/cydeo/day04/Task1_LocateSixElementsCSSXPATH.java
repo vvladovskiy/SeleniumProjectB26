@@ -49,6 +49,11 @@ public class Task1_LocateSixElementsCSSXPATH {
         System.out.println((driver.findElement(By.xpath("//*[@class='example']/h2")).isDisplayed() == true) ? "\"Forgot Password\"" + " header displayed! xpath1" : "\"Forgot Password\"" + " header NOT displayed! xpath1");
         System.out.println((driver.findElement(By.xpath("//div[starts-with(@id, 'cont')]/div/h2")).isDisplayed() == true) ? "\"Forgot Password\"" + " header displayed! xpath2" : "\"Forgot Password\"" + " header NOT displayed! xpath2");
 
+        System.out.println((driver.findElement(By.cssSelector("#forgot_password > div > div > label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! css1" : "\"E-mail\"" + " text NOT displayed! css1");
+        System.out.println((driver.findElement(By.cssSelector(".row>div>label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! css2" : "\"E-mail\"" + " text NOT displayed! css2");
+        System.out.println((driver.findElement(By.xpath("//*[@id=\"forgot_password\"]/div/div/label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! xpath1" : "\"E-mail\"" + " text NOT displayed! xpath1");
+        System.out.println((driver.findElement(By.xpath("//*[@name='forgot_password']/div/div/label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! xpath2" : "\"E-mail\"" + " text NOT displayed! xpath2");
+
 
 
 
