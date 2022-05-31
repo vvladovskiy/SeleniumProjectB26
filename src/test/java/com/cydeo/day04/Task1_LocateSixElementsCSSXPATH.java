@@ -4,11 +4,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.concurrent.TimeUnit;
 
 /**
  * XPATH and CSS Selector PRACTICES
@@ -37,6 +35,7 @@ public class Task1_LocateSixElementsCSSXPATH {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         Dimension dimension = new Dimension(1200, 1000);
         driver.manage().window().setSize(dimension);
 
@@ -58,6 +57,8 @@ public class Task1_LocateSixElementsCSSXPATH {
         System.out.println((driver.findElement(By.xpath("//*[@name='forgot_password']/div/div/label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! xpath2" : "\"E-mail\"" + " text NOT displayed! xpath2");
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
 
 
         driver.quit();
