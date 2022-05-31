@@ -7,6 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 /**
  * XPATH and CSS Selector PRACTICES
  * DO NOT USE ANY DEVELOPER TOOLS TO GET ANY LOCATORS.
@@ -54,8 +57,7 @@ public class Task1_LocateSixElementsCSSXPATH {
         System.out.println((driver.findElement(By.xpath("//*[@id=\"forgot_password\"]/div/div/label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! xpath1" : "\"E-mail\"" + " text NOT displayed! xpath1");
         System.out.println((driver.findElement(By.xpath("//*[@name='forgot_password']/div/div/label")).isDisplayed() == true) ? "\"E-mail\"" + " text displayed! xpath2" : "\"E-mail\"" + " text NOT displayed! xpath2");
 
-
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
         driver.quit();
