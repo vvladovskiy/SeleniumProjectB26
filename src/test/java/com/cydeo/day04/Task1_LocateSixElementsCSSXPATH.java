@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -58,7 +59,25 @@ public class Task1_LocateSixElementsCSSXPATH {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
+        WebElement emailInputBox1 = driver.findElement(By.cssSelector(""));
+        WebElement emailInputBox2 = driver.findElement(By.cssSelector(""));
+        WebElement emailInputBox3 = driver.findElement(By.xpath(""));
+        WebElement emailInputBox4 = driver.findElement(By.xpath(""));
 
+        WebElement retrievePasswordButton1 = driver.findElement(By.cssSelector(""));
+        WebElement retrievePasswordButton2 = driver.findElement(By.cssSelector(""));
+        WebElement retrievePasswordButton3 = driver.findElement(By.xpath(""));
+        WebElement retrievePasswordButton4 = driver.findElement(By.xpath(""));
+
+        WebElement poweredByCydeoText1 = driver.findElement(By.cssSelector(""));
+        WebElement poweredByCydeoText2 = driver.findElement(By.cssSelector(""));
+        WebElement poweredByCydeoText3 = driver.findElement(By.xpath(""));
+        WebElement poweredByCydeoText4 = driver.findElement(By.xpath(""));
+
+
+        System.out.println("emailInputBox1.isDisplayed() = " + emailInputBox1.isDisplayed());
+        System.out.println("retrievePasswordButton1.isDisplayed() = " + retrievePasswordButton1.isDisplayed());
+        System.out.println("poweredByCydeoText1.isDisplayed() = " + poweredByCydeoText1.isDisplayed());
 
 
         driver.quit();
