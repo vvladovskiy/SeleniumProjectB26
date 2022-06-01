@@ -59,20 +59,20 @@ public class Task1_LocateSixElementsCSSXPATH {
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        WebElement emailInputBox1 = driver.findElement(By.cssSelector(""));
-        WebElement emailInputBox2 = driver.findElement(By.cssSelector(""));
-        WebElement emailInputBox3 = driver.findElement(By.xpath(""));
-        WebElement emailInputBox4 = driver.findElement(By.xpath(""));
+        WebElement emailInputBox1 = driver.findElement(By.cssSelector("[name='email']"));
+        WebElement emailInputBox2 = driver.findElement(By.cssSelector("#forgot_password>div>div>[name ='email']"));
+        WebElement emailInputBox3 = driver.findElement(By.xpath("//*[@id=\"forgot_password\"]/div/div/input"));
+        //WebElement emailInputBox4 = driver.findElement(By.xpath(""));
 
-        WebElement retrievePasswordButton1 = driver.findElement(By.cssSelector(""));
-        WebElement retrievePasswordButton2 = driver.findElement(By.cssSelector(""));
-        WebElement retrievePasswordButton3 = driver.findElement(By.xpath(""));
-        WebElement retrievePasswordButton4 = driver.findElement(By.xpath(""));
+        WebElement retrievePasswordButton1 = driver.findElement(By.cssSelector("#form_submit"));
+        WebElement retrievePasswordButton2 = driver.findElement(By.cssSelector(".radius"));
+        //WebElement retrievePasswordButton3 = driver.findElement(By.xpath("//input[starts-with(@pattern,'a-z')]"));
+        //WebElement retrievePasswordButton4 = driver.findElement(By.xpath(""));
 
-        WebElement poweredByCydeoText1 = driver.findElement(By.cssSelector(""));
-        WebElement poweredByCydeoText2 = driver.findElement(By.cssSelector(""));
-        WebElement poweredByCydeoText3 = driver.findElement(By.xpath(""));
-        WebElement poweredByCydeoText4 = driver.findElement(By.xpath(""));
+        WebElement poweredByCydeoText1 = driver.findElement(By.cssSelector("#page-footer > div > div"));
+
+        WebElement poweredByCydeoText3 = driver.findElement(By.xpath("//*[@id=\"page-footer\"]/div/div"));
+        //WebElement poweredByCydeoText4 = driver.findElement(By.xpath(""));
 
 
         System.out.println("emailInputBox1.isDisplayed() = " + emailInputBox1.isDisplayed());
