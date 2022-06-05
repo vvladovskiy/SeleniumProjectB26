@@ -1,0 +1,71 @@
+06/01/2022
+Today's schedule:
+- Reviews
+- Stale Element Reference Exception
+- TestNG Intro
+- Reminder:
+Short videos: - 3 videos about Dropdown
+- Alert
+- Frames
+==========================================================================
+=====
+- XPATH :
+- How do you handle dynamic web elements?
+- How do you handle web elements that has dynamic attribute value?
+#1- We use xpath methods such as contains, starts-with, and ends-with.
+- We locate the part of the attribute that is not dynamic, and use
+that part within the xpath locators to locate the web element.
+#2- We can locate the static (stable) parent or child web elements and
+move from there.
+--------------------------------------------------------------------------
+----------
+- How do we move from parent to direct child using xpath?
+- We use "/" single slash to go to direct child.
+- How do we move from parent to any child using xpath?
+- We use "//" double slash to go to any child.
+- How do we move from child to parent using xpath?
+- We use "/.."
+- This will take our locator to the parent of currently located web
+element.
+- What is the syntax with the indexing in xpath?
+- How do we use indexes with xpath?
+- //tagName[@attribute='value'][3]
+- If we use indexes without paranthesis, this way will only work in
+direct siblings.
+- (//tagName[@attribute='value'])[3]
+- If we use indexes with paranthesis, this way it will work and index
+through the whole html page.
+--------------------------------------------------------------------------
+----------
+findElement vs findElements()
+- findElement
+- returns single web element
+- return type: WebElement (coming from Selenium)
+- it will throw NoSuchElementException if it cannot find a web
+element with given locator.
+- findElementS:
+- returns List of WebElements
+- return type : List<WebElement>
+- it will NOT throw exception, it will return empty list
+--------------------------------------------------------------------------
+----------
+- driver.manage().timeouts().impilicitlyWait(10, TimeUnit.SECONDS);
+- Basically this line will allow our driver to wait UP TO given time if
+driver cannot immedieatly locate a web element.
+- We write it one time, and it is applied to the whole driver session.
+- Driver does not have to wait until 10 second is ended. If it finds the
+web element before maybe in 2 second or 5 seconds it will continue with
+execution.
+--------------------------------------------------------------------------
+----------
+- checkboxes & radiobuttons
+- How do you handle checkboxes and radio buttons using Selenium?
+#1- We can click
+#2- We can check if they are selected or not. --> - isSelected();
+#3- We can check if they are enabled or not. --> isEnabled();
+- isSelected(); --> if web element is selected, it will return true, if
+not false.
+- isEnabled(); --> if web element is enabled, it will return true, if not
+false.
+==========================================================================
+=======
