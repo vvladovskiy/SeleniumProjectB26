@@ -1,32 +1,16 @@
 package com.cydeo.tests;
 
+import com.cydeo.base.TestBase;
 import com.cydeo.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestNG_Selenium {
+public class TestNG_Selenium_withBase extends TestBase {
 
-    WebDriver driver;
 
-    @BeforeMethod
-    public void setUp() {
-
-        driver = WebDriverFactory.getDriver("chrome");
-
-//        WebDriverManager.chromedriver().setup();
-//        WebDriver driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        driver.quit();
-    }
 
     @Test
     public void googleTitle() {
