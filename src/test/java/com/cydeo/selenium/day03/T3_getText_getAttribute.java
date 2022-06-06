@@ -1,4 +1,4 @@
-package com.cydeo.day03;
+package com.cydeo.selenium.day03;
 
 import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.By;

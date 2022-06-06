@@ -1,4 +1,4 @@
-package com.cydeo.day05;
+package com.cydeo.selenium.day05;
 
 public class T1_SolarPanel {
     public static void main(String[] args) {

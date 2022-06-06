@@ -1,4 +1,4 @@
-package com.cydeo.day06;
+package com.cydeo.selenium.day06;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;

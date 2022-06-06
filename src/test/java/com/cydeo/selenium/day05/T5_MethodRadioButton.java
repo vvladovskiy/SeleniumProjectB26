@@ -1,4 +1,4 @@
-package com.cydeo.day05;
+package com.cydeo.selenium.day05;
 
 /*
 Create a utility method to handle above logic.
