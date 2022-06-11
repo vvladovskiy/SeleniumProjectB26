@@ -1,6 +1,6 @@
 package com.cydeo.selenium.day07_testNG_dropdown_alert_iframe;
 
-import com.cydeo.test.utilities.WebDriverFactory;
+import com.cydeo.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
