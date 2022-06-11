@@ -1,6 +1,6 @@
-package com.cydeo;
+package com.cydeo.selenium.day07_testNG_dropdown_alert_iframe;
 
-import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.test.utilities.WebDriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,13 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
 import java.util.concurrent.TimeUnit;
-
-// links for Alert Practices:   https://chercher.tech/practice/practice-pop-ups-selenium-webdriver
-//                              https://demoqa.com/alerts
-
-
 
 public class AlertPractice {
 
@@ -27,7 +21,7 @@ public class AlertPractice {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         //Providing extra time for our driver before it throws NoSuchElementException
-        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 //        2. Go to website: http://practice.cydeo.com/javascript_alerts
         driver.get("http://practice.cydeo.com/javascript_alerts");
@@ -46,13 +40,8 @@ public class AlertPractice {
        // driver.switchTo().alert().accept();
 
         Alert alert = driver.switchTo().alert();
-        // if Alert comes from JS we use the Alert class
-        alert.accept(); // --> click "Ok" on popup
-        alert.dismiss(); // --> click "Cancel" on popup
-        alert.getText();  // --> to get text from popup
-        alert.sendKeys("text"); // --> to send text
-
-
+        // accept() will click on OK button on JS Alert
+        alert.accept();
 
 //        5. Verify “You successfully clicked an alert” text is displayed.
 

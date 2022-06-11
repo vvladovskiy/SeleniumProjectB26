@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import javax.net.ssl.HttpsURLConnection;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -24,7 +25,7 @@ import java.util.List;
 public class FindBrokenLinks {
     public static void main(String[] args) {
         String hrefValues = "";
-        HttpURLConnection connection = null;
+        HttpURLConnection connection = null;  //  public abstract class HttpURLConnection extends URLConnection
         int statusCode = 200;
 
         WebDriverManager.chromedriver().setup();
@@ -33,6 +34,9 @@ public class FindBrokenLinks {
         driver.get("https://practice.cydeo.com/status_codes");
 
         List<WebElement> links = driver.findElements(By.tagName("a"));
+        /**
+         * The List interface in Java provides a way to store the ordered collection. It is a child interface of Collection. It is an ordered collection of objects in which duplicate values can be stored. Since List preserves the insertion order, it allows positional access and insertion of elements.
+         */
 
         for (int i = 0; i < links.size(); i++) {
             hrefValues = links.get(i).getAttribute("href");
