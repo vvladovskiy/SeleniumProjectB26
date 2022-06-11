@@ -32,6 +32,15 @@ public class IframePractice extends TestBase {
           // we can find iframe tags from html with using xpath "//iframe"
           //driver.switchTo().frame(0);
 
+          /**
+           * WebElement = driver.findElement(By.tagName("iframe"));
+           *
+           * driver.switchTo().frame(iframe);
+           * driver.switchTo().frame(0);
+           * driver.switchTo().frame("iframe-id");
+           * driver.switchTo().parentFrame();  -> switch back to parentFrame
+           */
+
 
           WebElement commentBody = driver.findElement(By.id("tinymce"));
           // clear() method delete text form comment body.

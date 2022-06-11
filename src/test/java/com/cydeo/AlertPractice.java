@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 // links for Alert Practices:   https://chercher.tech/practice/practice-pop-ups-selenium-webdriver
 //                              https://demoqa.com/alerts
+//                              http://practice.cydeo.com/javascript_alerts
 
 
 
