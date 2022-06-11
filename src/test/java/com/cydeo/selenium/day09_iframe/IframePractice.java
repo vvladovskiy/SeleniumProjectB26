@@ -36,12 +36,15 @@ public class IframePractice extends TestBase {
 
 
           /**
-           * WebElement = driver.findElement(By.tagName("iframe"));
+           * WebElement iframe = driver.findElement(By.tagName("iframe"));
+           * driver.switchTo().frame(iframe);       -> by locator
            *
-           * driver.switchTo().frame(iframe name);
-           * driver.switchTo().frame(0);
-           * driver.switchTo().frame("iframe-id");
-           * driver.switchTo().parentFrame();  -> switch back to parentFrame
+           * driver.switchTo().frame(0);            -> by index
+           *
+           * driver.switchTo().frame("iframe-id");  -> by id Name
+           *
+           * driver.switchTo().parentFrame();        -> switch back to parentFrame
+           * driver.switchTo().defaultContent();     -> switch back to default HTML
            */
 
 
