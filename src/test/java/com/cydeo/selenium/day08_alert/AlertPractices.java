@@ -77,6 +77,15 @@ public class AlertPractices {
 //        5. Click to OK button from the alert
           alert.accept();
 
+          /**
+        Alert alert = driver.switchTo().alert();
+        // if Alert comes from JS we use the Alert class
+        alert.accept(); // --> click "Ok" on popup
+        alert.dismiss(); // --> click "Cancel" on popup
+        alert.getText();  // --> to get text from popup
+        alert.sendKeys("text"); // --> to send text
+           */
+
         Thread.sleep(3000);
 
 //        6. Verify “You entered: hello” text is displayed.
