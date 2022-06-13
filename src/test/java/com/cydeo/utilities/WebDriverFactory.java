@@ -21,6 +21,7 @@ public class WebDriverFactory {
         if(browserType.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
+            //WebDriver driver = new ChromeDriver();
 
         }else if(browserType.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().setup();
