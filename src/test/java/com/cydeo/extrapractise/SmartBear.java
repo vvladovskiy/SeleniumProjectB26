@@ -50,6 +50,10 @@ public class SmartBear extends TestBase {
         System.out.println("driver.findElement(By.linkText(\"View all products\")) = " + driver.findElement(By.linkText("View all orders")));
         System.out.println("driver.findElement(By.linkText(\"Order\")) = " + driver.findElement(By.linkText("View all orders")));
 
+
+// elem.getAttribute("innerHTML");
+
+
         //Mini-Task: CREATE A CLASSàSmartBearUtils
         //• Create a method called loginToSmartBear
         //• This method simply logs in to SmartBear when you call it.
@@ -70,8 +74,22 @@ public class SmartBear extends TestBase {
         order1.click();
 
         //7. Select familyAlbum from product, set quantity to 2
-        Select dropdownName = new Select(driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_ddlProduct']")));
+        WebElement dropdown = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_ddlProduct']"));
+
+        // wrap this element inside Select object
+        Select dropdownName = new Select(dropdown);
+
+        dropdownName.selectByVisibleText("FamilyAlbum");
+        dropdownName.selectByIndex(1);   //  0 1 2
         dropdownName.selectByValue("FamilyAlbum");
+
+        dropdownName.getOptions().get(0); // all options -> List of WebElements
+        dropdownName.getFirstSelectedOption().getText(); // currently selected -> WebElement
+        dropdownName.getAllSelectedOptions().get(0); // all selected options -> List of WebElements
+
+        System.out.println(dropdownName.getOptions().get(0)); // all options -> List of WebElements
+        System.out.println(dropdownName.getFirstSelectedOption().getText()); // currently selected -> WebElement
+        System.out.println(dropdownName.getAllSelectedOptions().get(0)); // all selected options -> List of WebElements
 
 
         //8. Click to “Calculate” button
