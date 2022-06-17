@@ -1,9 +1,11 @@
 package com.cydeo.extrapractise;
 
 import com.cydeo.base.TestBase;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.Iterator;
@@ -70,7 +72,7 @@ public class SmartBear extends TestBase {
 
 
         //6. Click on Order
-        WebElement order1 = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_orderGrid']/tbody/tr[2]/td[13]/input"));
+        WebElement order1 = driver.findElement(By.xpath("//*[@id='ctl00_menu']/li[3]/a"));
         order1.click();
 
         //7. Select familyAlbum from product, set quantity to 2
@@ -100,17 +102,43 @@ public class SmartBear extends TestBase {
 
         Faker faker = new Faker();
 
-        String name = faker.name().fullName(); // Miss Samanta Schmidt
-        String firstName = faker.name().firstName(); // Emory
-        String lastName = faker.name().lastName(); // Barton
+        System.out.println("faker.name().fullName() = " + faker.name().fullName());
+        //System.out.println("faker.name().firstName() = " + faker.name().firstName());
+        //System.out.println("faker.name().lastName() = " + faker.name().lastName());
+        System.out.println("faker.address().streetAddress() = " + faker.address().streetAddress());
+        System.out.println("faker.address().streetAddress() = " + faker.address().city());
+        System.out.println("faker.address().streetAddress() = " + faker.address().state());
+        System.out.println("faker.address().streetAddress() = " + faker.address().zipCode());
 
-        String streetAddress = faker.address().streetAddress(); // 60018 Sawayn Brooks Suite 449
 
 
         //• Generate: name, street, city, state, zip code
+
+
         //10. Click on “visa” radio button
+WebElement visa = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_cardList_0']"));
+visa.click();
+
         //11. Generate card number using JavaFaker
+        System.out.println("faker.finance().creditCard() = " + faker.finance().creditCard());
+        System.out.println("faker.data() = " + faker.date());
+
+
         //12. Click on “Process”
+        driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_InsertButton']")).click();
+
         //13.Verify success message “New order has been successfully added.”
+//        WebElement actual = driver.findElement(By.xpath("//strong"));
+//        actual.isDisplayed();
+//        System.out.println(actual);
+
+        WebElement actual = driver.findElement(By.cssSelector("strong"));
+        actual.getText();
+
+      Thread.sleep(3000);
+
+        Assert.assertEquals(actual,"New order has been successfully added.","Test failed");
+
+
     }
 }
