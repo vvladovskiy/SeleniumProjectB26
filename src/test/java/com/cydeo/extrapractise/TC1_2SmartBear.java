@@ -13,7 +13,7 @@ import java.util.List;
 
 import static com.cydeo.utilities.SmartBearUtils.loginToSmartBear;
 
-public class SmartBear extends TestBase {
+public class TC1_2SmartBear extends TestBase {
 
     // TC #1: Smartbear software link verification
 
@@ -132,12 +132,12 @@ visa.click();
 //        actual.isDisplayed();
 //        System.out.println(actual);
 
-        WebElement actual = driver.findElement(By.cssSelector("strong"));
-        actual.getText();
+        Thread.sleep(2000);
 
-      Thread.sleep(3000);
+        //WebElement actual = driver.findElement(By.cssSelector("strong"));
+        WebElement actual1 =driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder']/tbody/tr/td/div/strong"));
 
-        Assert.assertEquals(actual,"New order has been successfully added.","Test failed");
+        Assert.assertEquals("New order has been successfully added.", actual1.getText(),"Test failed");
 
 
     }

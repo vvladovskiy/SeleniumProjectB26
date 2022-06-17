@@ -19,7 +19,7 @@ public class ConfigurationReader {
             file.close();
 
         } catch (IOException e) {
-            System.out.println("Error occured while reading configuration file");
+            System.out.println("File not found in ConfigurationReader class");
             e.printStackTrace();
         }
     }
