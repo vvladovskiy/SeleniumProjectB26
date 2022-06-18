@@ -99,46 +99,50 @@ public class TC1_2SmartBear extends TestBase {
 
 
         //9. Fill address Info with JavaFaker
+        //• Generate: name, street, city, state, zip code
 
         Faker faker = new Faker();
 
-        System.out.println("faker.name().fullName() = " + faker.name().fullName());
+        WebElement Qua = driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_fmwOrder_txtQuantity\"]"));
+        Qua.clear();
+        Qua.sendKeys(faker.numerify("2"));
+
+        WebElement name = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_txtName']"));
+        name.sendKeys(faker.name().fullName());
+
         //System.out.println("faker.name().firstName() = " + faker.name().firstName());
         //System.out.println("faker.name().lastName() = " + faker.name().lastName());
-        System.out.println("faker.address().streetAddress() = " + faker.address().streetAddress());
-        System.out.println("faker.address().streetAddress() = " + faker.address().city());
-        System.out.println("faker.address().streetAddress() = " + faker.address().state());
-        System.out.println("faker.address().streetAddress() = " + faker.address().zipCode());
 
+        WebElement address = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_TextBox2']"));
+        address.sendKeys(faker.address().streetAddress());
 
+        WebElement city = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_TextBox3']"));
+        city.sendKeys(faker.address().city());
 
-        //• Generate: name, street, city, state, zip code
+        WebElement zip = driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_fmwOrder_TextBox5\"]"));
+        zip.sendKeys(faker.numerify("98040"));
 
 
         //10. Click on “visa” radio button
-WebElement visa = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_cardList_0']"));
-visa.click();
+        WebElement visa = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_cardList_0']"));
+        visa.click();
 
         //11. Generate card number using JavaFaker
-        System.out.println("faker.finance().creditCard() = " + faker.finance().creditCard());
-        System.out.println("faker.data() = " + faker.date());
 
+        WebElement card = driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_fmwOrder_TextBox6\"]"));
+        card.sendKeys(faker.numerify("123412341234"));
+
+        WebElement data = driver.findElement(By.xpath("//*[@id=\"ctl00_MainContent_fmwOrder_TextBox1\"]"));
+        data.sendKeys(faker.numerify("12/22"));
 
         //12. Click on “Process”
         driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder_InsertButton']")).click();
 
         //13.Verify success message “New order has been successfully added.”
-//        WebElement actual = driver.findElement(By.xpath("//strong"));
-//        actual.isDisplayed();
-//        System.out.println(actual);
+        WebElement actual1 = driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder']/tbody/tr/td/div/strong"));
 
-        Thread.sleep(2000);
-
-        //WebElement actual = driver.findElement(By.cssSelector("strong"));
-        WebElement actual1 =driver.findElement(By.xpath("//*[@id='ctl00_MainContent_fmwOrder']/tbody/tr/td/div/strong"));
-
-        Assert.assertEquals("New order has been successfully added.", actual1.getText(),"Test failed");
-
+        //"New order has been successfully added.", "Test failed"
+        Assert.assertEquals(actual1.getText(), "New order has been successfully added.", "Test failed");
 
     }
 }
