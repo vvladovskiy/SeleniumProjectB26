@@ -1,6 +1,7 @@
 package com.cydeo.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -27,6 +28,7 @@ public class Driver {
 
         // We read browserType from configuration.properties with
             // help of ConfigurationReader class' getProperty() method
+
         String browserType = ConfigurationReader.getProperty("browser");
 
             switch(browserType){
@@ -34,7 +36,9 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     driver.manage().window().maximize();
-                    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    Dimension dimension = new Dimension(1200, 1000);
+                    driver.manage().window().setSize(dimension);
+                    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
                     break;
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();

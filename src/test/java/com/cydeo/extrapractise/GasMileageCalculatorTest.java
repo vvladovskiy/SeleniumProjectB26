@@ -1,7 +1,16 @@
 package com.cydeo.extrapractise;
 
 import com.cydeo.base.TestBase;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
+import net.bytebuddy.asm.Advice;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
 
 /*
 Task #: Gas Mileage Calculator Automation Test
@@ -20,15 +29,29 @@ Task #: Gas Mileage Calculator Automation Test
 11. Verify mpg value is as expected:
 Expected value: “23.44 mpg”
  */
-public class GasMileageCalculatorTest extends TestBase {
+public class GasMileageCalculatorTest {
     @Test
     public void testGasMileageCalc() {
 
-        driver.get("https://www.calculator.net");
+        Driver.getDriver().get(ConfigurationReader.getProperty("env1"));
+        Driver.getDriver().findElement(By.id("calcSearchTerm")).sendKeys("gas mileage");
+        Driver.getDriver().findElement(By.xpath("//*[@id='calcSearchOut']/div/a")).click();
 
+        assertEquals(Driver.getDriver().getTitle(), "Gas Mileage Calculator", "nop!");
+        assertEquals(Driver.getDriver().findElement(By.xpath("//*[@id='content']/h1")).isDisplayed(),true,"nop!");
 
+        Driver.getDriver().findElement(By.id("uscodreading")).clear();
+        Driver.getDriver().findElement(By.id("uscodreading")).sendKeys("7925");
+        Driver.getDriver().findElement(By.id("uspodreading")).clear();
+        Driver.getDriver().findElement(By.id("uspodreading")).sendKeys("7550");
+        Driver.getDriver().findElement(By.id("usgasputin")).clear();
+        Driver.getDriver().findElement(By.id("usgasputin")).sendKeys("16");
+        Driver.getDriver().findElement(By.id("usgasprice")).clear();
+        Driver.getDriver().findElement(By.id("usgasprice")).sendKeys("3.55");
 
+        Driver.getDriver().findElement(By.xpath("//*[@id='standard']/tbody/tr[5]/td/input")).click();
+        assertEquals(Driver.getDriver().findElement(By.xpath("//*[@id=\"content\"]/p[2]/font/b")).getText(),"23.44 mpg","test failed!");
 
-
+        Driver.closeDriver();
     }
 }
