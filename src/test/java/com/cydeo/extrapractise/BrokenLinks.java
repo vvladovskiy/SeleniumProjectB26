@@ -11,7 +11,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
-
+  //  https://www.guru99.com/find-broken-links-selenium-webdriver.html
 public class BrokenLinks {
     private static WebDriver driver = null;
 
